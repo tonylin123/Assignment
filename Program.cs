@@ -1,13 +1,14 @@
-﻿using System;  
+using System;  
 public class calculator
 {  
     public static void Main() 
    {
 
-
+   
    double num1;
    double num2;
    int menu;
+   
    while(true){
    
            Console.Write("\n\n");
@@ -28,14 +29,13 @@ public class calculator
     switch(menu) {
 
       case 1:
-
        Console.Write("Enter the first integer number:");
        num1 = Convert.ToDouble(Console.ReadLine());
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
+       
         //Addition
-       Console.Write("The Addition of  {0} and {1} is: {2}\n",num1,num2,num1+num2);
-       Console.Write("Any keys return to the menu"  );
+        Console.Write("The Addition of {0}  and {1} is : {2}\n",num1,num2, Addition( num1,num2 ));
         
         break;
         
@@ -46,7 +46,7 @@ public class calculator
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
        //Substraction
-       Console.Write("The Substraction of {0} and {1} is: {2}\n",num1,num2,num1-num2);
+       Console.Write("The Substraction of {0} and {1} is: {2}\n",num1,num2,Substraction(num1, num2 ));
        Console.Write("Any key return to the menu"  );
         
         break;
@@ -58,7 +58,7 @@ public class calculator
         Console.Write("Enter the second integer number:");
         num2 = Convert.ToDouble(Console.ReadLine());
         //Multiplication
-        Console.Write("The Multiplication of {0} and {1} is: {2}\n",num1,num2,num1*num2);
+        Console.Write("The Multiplication of {0} and {1} is: {2}\n",num1,num2,Multiplication(num1,num2));
         Console.Write("Any key return to the menu"  );
         
         break;  
@@ -70,14 +70,8 @@ public class calculator
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
        //When users input 0
-        if(num1==0 || num2==0) {
-          Console.Write( " Divide by zero is : 0 " );
+       Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2,Division( num1, num2));
           
-        } else {
-          //Division
-          Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2, num1/num2  );
-         
-        }  
         Console.Write("\n");
         Console.WriteLine("Any key return to the menu"  );
         break;
@@ -98,5 +92,30 @@ public class calculator
    
    Console.ReadKey();
   }
-}  
+} 
+  public static double Addition(double num1,double num2 ) { 
+          
+
+       return num1 + num2 ; 
+      
+ } 
+ public static double Substraction(double num1,double num2 ) { 
+          
+
+       return num1 - num2 ; 
+   } 
+  public static double Multiplication(double num1,double num2 ) { 
+          
+
+       return num1*num2 ; 
+
+   } 
+   public static double Division(double num1,double num2 ) { 
+          
+    
+       return num1/num2; 
+
+   } 
+   
+
 } 
