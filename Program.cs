@@ -74,7 +74,7 @@ public class calculator
           Console.Write( " Divide by zero is : 0 " );
           
         } else {
-          
+          //Division
           Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2, num1/num2  );
          
         }  
