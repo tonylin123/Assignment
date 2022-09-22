@@ -33,9 +33,10 @@ public class calculator
        num1 = Convert.ToDouble(Console.ReadLine());
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
+       Console.Write("The Addition of {0}  and {1} is : {2}\n",num1,num2, Addition( num1,num2 ));
        
         //Addition
-        Console.Write("The Addition of {0}  and {1} is : {2}\n",num1,num2, Addition( num1,num2 ));
+       
         
         break;
         
@@ -64,13 +65,13 @@ public class calculator
         break;  
       
       case 4:
-       
        Console.WriteLine("Try to divide by zero, enter the first integer number:");
        num1 = Convert.ToDouble(Console.ReadLine());
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
+        Division(num1,num2 );
        //When users input 0
-       Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2,Division( num1, num2));
+        
           
         Console.Write("\n");
         Console.WriteLine("Any key return to the menu"  );
@@ -94,8 +95,7 @@ public class calculator
   }
 } 
   public static double Addition(double num1,double num2 ) { 
-          
-
+      
        return num1 + num2 ; 
       
  } 
@@ -110,12 +110,21 @@ public class calculator
        return num1*num2 ; 
 
    } 
-   public static double Division(double num1,double num2 ) { 
-          
-    
-       return num1/num2; 
+   private static double Division(double num1,double num2 ){ 
+      
+        
+      
+        if(num1==0 || num2==0) {
+          Console.Write( " Divide by zero is : 0 " );
+             
+        } else {
 
-   } 
+        Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2, num1/num2);
+      }        
+    
+        return num1/num2;
+       
    
+   }  
 
 } 
