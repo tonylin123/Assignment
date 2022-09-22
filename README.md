@@ -1,2 +1,2 @@
-# Assignment 1, Calculator beta
+# Assignment 1, Calculator 
 
