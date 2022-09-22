@@ -29,10 +29,7 @@ public class calculator
     switch(menu) {
 
       case 1:
-       Console.Write("Enter the first integer number:");
-       num1 = Convert.ToDouble(Console.ReadLine());
-       Console.Write("Enter the second integer number:");
-       num2 = Convert.ToDouble(Console.ReadLine());
+       GetInputFromUser(out num1, out num2);
        Console.Write("The Addition of {0}  and {1} is : {2}\n",num1,num2, Addition( num1,num2 ));
        
         //Addition
@@ -42,40 +39,31 @@ public class calculator
         
       case 2:
 
-       Console.Write("Enter the first integer number:");
-       num1 = Convert.ToDouble(Console.ReadLine());
-       Console.Write("Enter the second integer number:");
-       num2 = Convert.ToDouble(Console.ReadLine());
+       GetInputFromUser(out num1, out num2);
        //Substraction
        Console.Write("The Substraction of {0} and {1} is: {2}\n",num1,num2,Substraction(num1, num2 ));
-       Console.Write("Any key return to the menu"  );
+      
         
         break;
         
       case 3:
 
-        Console.Write("Enter the first integer number:");
-        num1 = Convert.ToDouble(Console.ReadLine());
-        Console.Write("Enter the second integer number:");
-        num2 = Convert.ToDouble(Console.ReadLine());
+        GetInputFromUser(out num1, out num2);
         //Multiplication
         Console.Write("The Multiplication of {0} and {1} is: {2}\n",num1,num2,Multiplication(num1,num2));
-        Console.Write("Any key return to the menu"  );
+        
         
         break;  
       
-      case 4:
-       Console.WriteLine("Try to divide by zero, enter the first integer number:");
-       num1 = Convert.ToDouble(Console.ReadLine());
-       Console.Write("Enter the second integer number:");
-       num2 = Convert.ToDouble(Console.ReadLine());
-         //Division
-         Division(num1,num2 );
-      
+       case 4:
+        GetInputFromUser(out num1, out num2);
+        //Division
+        Division(num1,num2 );
+       
         
           
         Console.Write("\n");
-        Console.WriteLine("Any key return to the menu"  );
+        
         break;
         
       case 5: 
@@ -87,14 +75,22 @@ public class calculator
         
       default:
         Console.Write( "Input correct option\n"+ menu );
-        Console.WriteLine("Any key return to the menu\n"  );
+       
         
         break; 
     }
-   
-   Console.ReadKey();
+    Console.WriteLine("Any key return to the menu\n"  );
+    Console.ReadKey();
   }
 } 
+
+// user input
+public static void GetInputFromUser(out double num1, out double num2){
+   Console.WriteLine("Enter the first integer number:");
+       num1 = Convert.ToDouble(Console.ReadLine());
+       Console.Write("Enter the second integer number:");
+       num2 = Convert.ToDouble(Console.ReadLine());
+}
   public static double Addition(double num1,double num2 ) { 
       
        return num1 + num2 ; 
@@ -111,21 +107,21 @@ public class calculator
        return num1*num2 ; 
 
    } 
-   private static double Division(double num1,double num2 ){ 
+   public static double Division(double num1,double num2 ){ 
       
         
       
-        if(num1==0 || num2==0) {
-          Console.Write( " Divide by zero is : 0 " );
+       if( num2==0) {
+          Console.Write( "You are not allowed divide by 0 " );
              
-        } else {
+       } else {
 
         Console.Write("The Division of {0}  and {1} is : {2}\n",num1,num2, num1/num2);
-      }        
-    
+              
+     } 
         return num1/num2;
        
-   
-   }  
+    }  
+     
 
 } 
