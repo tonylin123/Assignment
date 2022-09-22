@@ -69,8 +69,9 @@ public class calculator
        num1 = Convert.ToDouble(Console.ReadLine());
        Console.Write("Enter the second integer number:");
        num2 = Convert.ToDouble(Console.ReadLine());
-        Division(num1,num2 );
-       //When users input 0
+         //Division
+         Division(num1,num2 );
+      
         
           
         Console.Write("\n");
